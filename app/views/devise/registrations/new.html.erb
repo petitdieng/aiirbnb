@@ -6,7 +6,7 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-3">
-        <%= f.label :fullname, class: 'form-label' %>
+        <%= f.label :fullname, "Nom complet", class: 'form-label' %>
         <%= f.text_field :fullname, class: 'form-control', autofocus: true, autocomplete: "fullname", placeholder: "nom complet", required: true %>
         <div class="invalid-feedback">
           Veuillez entrer votre nom complet.
@@ -14,7 +14,7 @@
       </div>
 
       <div class="mb-3">
-        <%= f.label :email, class: 'form-label' %>
+        <%= f.label :email, "Adresse e-mail", class: 'form-label' %>
         <%= f.email_field :email, class: 'form-control', autocomplete: "email", placeholder: "adresse e-mail", required: true %>
         <div class="invalid-feedback">
           Veuillez entrer une adresse e-mail valide.
@@ -38,6 +38,11 @@
         <div class="invalid-feedback">
           Veuillez entrer confirmer votre mot de passe.
         </div>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :avatar, class: 'form-label' %>
+        <%= f.file_field :avatar, class: 'form-control' %>
       </div>
 
       <div class="d-grid">

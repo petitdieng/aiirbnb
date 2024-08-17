@@ -21,6 +21,22 @@
         </div>
       </div>
 
+      <div class="mb-3">
+        <%= f.label :phone_number, class: 'form-label' %>
+        <%= f.telephone_field :phone_number, class: 'form-control', autofocus: true, autocomplete: "phone_number", placeholder: "Numero de telephone" %>
+        <div class="invalid-feedback">
+          Please enter your phone number.
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :description, class: 'form-label' %>
+        <%= f.text_area :description, class: 'form-control', autofocus: true, autocomplete: "description", placeholder: "Description" %>
+        <div class="invalid-feedback">
+          Please enter your description.
+        </div>
+      </div>
+
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <div class="mb-3">
           Currently waiting confirmation for: <%= resource.unconfirmed_email %>
@@ -46,6 +62,11 @@
         <%= f.password_field :current_password, class: 'form-control', autocomplete: "current-password", placeholder: "Current password" %>
       </div>
 
+      <div class="mb-3">
+        <%= f.label :avatar, class: 'form-label' %>
+        <%= f.file_field :avatar, class: 'form-control' %>
+      </div>
+
       <div class="d-grid">
         <%= f.submit "Update", class: "btn btn-primary" %>
       </div>
@@ -55,6 +76,10 @@
 
     <div class="mt-3">
       Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %>
+    </div>
+
+    <div class="text-center mt-3">
+      <%= link_to "voir mon profil", user_path(current_user.id), class: "btn btn-secondary" %>
     </div>
 
     <div class="text-center mt-3">
